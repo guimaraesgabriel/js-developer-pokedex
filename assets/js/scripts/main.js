@@ -8,6 +8,30 @@ let limit = 21;
 
 const maxLimitPokemons = 151;
 
+let pokemonIdToggled = null;
+
+function toggleDetails(pokemonNumber) {
+  if (pokemonIdToggled) {
+    const divPokemonToggledId = document.getElementById(
+      `div-pokemon-details-${pokemonIdToggled}`
+    );
+
+    if (pokemonNumber === pokemonIdToggled) {
+      return (divPokemonToggledId.style.display = "none");
+    }
+
+    divPokemonToggledId.style.display = "none";
+  }
+
+  const divPokemonDetailsId = document.getElementById(
+    `div-pokemon-details-${pokemonNumber}`
+  );
+
+  divPokemonDetailsId.style.display = "initial";
+
+  pokemonIdToggled = pokemonNumber;
+}
+
 function mapPokemonTypesToList(types) {
   return types
     .map(
@@ -19,17 +43,63 @@ function mapPokemonTypesToList(types) {
     .join("");
 }
 
+function mapPokemonAbilitiesToList(abilities) {
+  return abilities
+    .map(
+      (abilities) =>
+        `<div class="pokemon_more-details_abilities_list_ability ${
+          abilities.is_hidden
+            ? "pokemon_more-details_abilities_list_ability_hidden"
+            : ""
+        }">
+          <span>${abilities.ability.name}</span>
+          <span>${abilities.is_hidden ? "*" : ""}</span>
+        </div>`
+    )
+    .join("");
+}
+
+function mapPokemonStatsToList(stats) {
+  return stats
+    .map(
+      (stats) =>
+        `<div class="pokemon_more-details_stats_list_stat">
+          <span class="pokemon_more-details_stats_list_stat_name">${stats.stat.name.replace(
+            /\-/g,
+            " "
+          )}</span>
+
+          <span class="pokemon_more-details_stats_list_stat_base-stat">${
+            stats.base_stat
+          }</span>
+        </div>`
+    )
+    .join("");
+}
+
+function mapPokemonHeldItemsToList(heldItems) {
+  return heldItems
+    .map(
+      (heldItems) =>
+        `<div class="pokemon_more-details_held-items_list_item">${heldItems.item.name}</div>`
+    )
+    .join("");
+}
+
 function mapPokemonToList(pokemon) {
   return `
-    <li class="pokemon card_${pokemon.mainType}">
+    <li
+      class="pokemon card_${pokemon.mainType}" 
+      onclick="toggleDetails(${pokemon.number})"
+    >
       <div class="pokemon_header">
-      <span class="pokemon_header_name">${pokemon.name}</span>
-      <span class="pokemon_header_number">#${pokemon.number}</span>
+        <span class="pokemon_header_name">${pokemon.name}</span>
+        <span class="pokemon_header_number">#${pokemon.number}</span>
       </div>
 
       <div class="pokemon_details">
         <ol class="pokemon_details_types">
-        ${mapPokemonTypesToList(pokemon.types)}
+          ${mapPokemonTypesToList(pokemon.types)}
         </ol>
 
         <img
@@ -37,6 +107,50 @@ function mapPokemonToList(pokemon) {
           src="${pokemon.img}"
           alt="${pokemon.name}"
         />
+      </div>
+
+      <div 
+        class="pokemon_more-details" 
+        id="div-pokemon-details-${pokemon.number}"
+      >
+        <div class="pokemon_more-details_short-data">
+          <div class="pokemon_more-details_short-data_height">
+            Height: ${pokemon.height}
+          </div>
+
+          <div class="pokemon_more-details_short-data_weight">
+            Weight: ${pokemon.weight}
+          </div>
+
+          <div class="pokemon_more-details_short-data_base-experience">
+            Base XP: ${pokemon.baseExperience}
+          </div>
+        </div>
+
+        <div class="pokemon_more-details_abilities">
+          <span class="pokemon_more-details_abilities_title">Abilities:</span>
+
+          <div class="pokemon_more-details_abilities_list">
+            ${mapPokemonAbilitiesToList(pokemon.abilities)}
+          </div>
+        </div>
+
+        <div class="pokemon_more-details_stats">
+          <span class="pokemon_more-details_stats_title">Base Stats:</span>
+
+          <div class="pokemon_more-details_stats_list">
+            ${mapPokemonStatsToList(pokemon.stats)}
+          </div>
+        </div>
+
+        <div class="pokemon_more-details_held-items" style="display:${
+          pokemon.heldItems.length > 0 ? "initial" : "none"
+        }">
+         <span class="pokemon_more-details_held-items_title">Held Items:</span>
+          <div class="pokemon_more-details_held-items_list">
+            ${mapPokemonHeldItemsToList(pokemon.heldItems)}
+          </div>
+        </div>
       </div>
     </li>
   `;
@@ -63,14 +177,10 @@ loadMorePokemons = () => {
           .map(mapPokemonToList)
           .join("");
 
-        isLoading = false;
-
         btnLoadMore.style.display = "none";
       })
-      .catch((error) => {
-        console.error(error);
-        isLoading = false;
-      });
+      .catch((error) => console.error(error))
+      .finally(() => (isLoading = false));
 
     return;
   }
@@ -79,11 +189,7 @@ loadMorePokemons = () => {
     .getListPokemons(limit, offset)
     .then((pokemonsApi = []) => {
       listPokemonsHTML.innerHTML += pokemonsApi.map(mapPokemonToList).join("");
-
-      isLoading = false;
     })
-    .catch((error) => {
-      console.error(error);
-      isLoading = false;
-    });
+    .catch((error) => console.error(error))
+    .finally(() => (isLoading = false));
 };

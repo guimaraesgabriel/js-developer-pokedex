@@ -1,0 +1,161 @@
+.card_bug {
+  color: #000;
+  background-color: rgb(180, 245, 110);
+}
+.bug {
+  color: #000;
+  background-color: rgb(140, 225, 30);
+}
+
+.card_dark {
+  color: #fff;
+  background-color: rgb(40, 40, 40);
+}
+.dark {
+  color: #fff;
+  background-color: rgb(40, 40, 40);
+}
+
+.card_dragon {
+  color: #fff;
+  background-color: rgb(190, 150, 65);
+}
+.dragon {
+  color: #fff;
+  background-color: rgb(145, 100, 10);
+}
+
+.card_electric {
+  color: #000;
+  background-color: rgb(255, 240, 80);
+}
+.electric {
+  color: #000;
+  background-color: rgb(255, 240, 40);
+}
+
+.card_fairy {
+  color: #000;
+  background-color: rgb(235, 90, 190);
+}
+.fairy {
+  color: #000;
+  background-color: rgb(233, 50, 190);
+}
+
+.card_fighting {
+  color: #000;
+  background-color: rgb(240, 195, 95);
+}
+.fighting {
+  color: #000;
+  background-color: rgb(240, 170, 20);
+}
+
+.card_fire {
+  color: #000;
+  background-color: rgb(235, 90, 90);
+}
+.fire {
+  color: #000;
+  background-color: rgb(235, 45, 45);
+}
+
+.card_flying {
+  color: #000;
+  background-color: rgb(185, 255, 240);
+}
+.flying {
+  color: #000;
+  background-color: rgb(185, 250, 220);
+}
+
+.card_ghost {
+  color: #fff;
+  background-color: rgb(180, 80, 205);
+}
+.ghost {
+  color: #fff;
+  background-color: rgb(150, 30, 180);
+}
+
+.card_grass {
+  color: #000;
+  background-color: rgb(70, 235, 70);
+}
+.grass {
+  color: #000;
+  background-color: rgb(90, 170, 0);
+}
+
+.card_ground {
+  color: #000;
+  background-color: rgb(250, 210, 45);
+}
+.ground {
+  color: #000;
+  background-color: rgb(250, 205, 30);
+}
+
+.card_ice {
+  color: #000;
+  background-color: rgb(90, 230, 255);
+}
+.ice {
+  color: #000;
+  background-color: rgb(40, 220, 255);
+}
+
+.card_normal {
+  color: #000;
+  background-color: rgb(255, 255, 255);
+}
+.normal {
+  color: #000;
+  background-color: rgb(240, 240, 240);
+}
+
+.card_poison {
+  color: #fff;
+  background-color: rgb(135, 60, 150);
+}
+.poison {
+  color: #fff;
+  background-color: rgb(130, 20, 150);
+}
+
+.card_psychic {
+  color: #000;
+  background-color: rgb(230, 105, 160);
+}
+.psychic {
+  color: #000;
+  background-color: rgb(230, 75, 140);
+}
+
+.card_rock {
+  color: #fff;
+  background-color: rgb(150, 105, 40);
+}
+.rock {
+  color: #fff;
+  background-color: rgb(145, 90, 15);
+}
+
+.card_steel {
+  color: #fff;
+  background-color: rgb(220, 220, 220);
+}
+.steel {
+  color: #fff;
+  background-color: rgb(130, 130, 130);
+}
+
+.card_water {
+  color: #000;
+  background-color: rgb(115, 135, 245);
+}
+.water {
+  color: #000;
+  background-color: rgb(80, 105, 245);
+}

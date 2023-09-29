@@ -67,166 +67,118 @@
   filter: drop-shadow(2px 2px 3px #000);
 }
 
-.card_bug {
-  color: #000;
-  background-color: rgb(180, 245, 110);
-}
-.bug {
-  color: #000;
-  background-color: rgb(140, 225, 30);
+.pokemon_more-details {
+  display: none;
 }
 
-.card_dark {
-  color: #fff;
-  background-color: rgb(40, 40, 40);
-}
-.dark {
-  color: #fff;
-  background-color: rgb(40, 40, 40);
+.pokemon_more-details_short-data {
+  display: flex;
+  justify-content: space-around;
+
+  color: #000;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.325rem 0;
 }
 
-.card_dragon {
-  color: #fff;
-  background-color: rgb(190, 150, 65);
-}
-.dragon {
-  color: #fff;
-  background-color: rgb(145, 100, 10);
-}
-
-.card_electric {
-  color: #000;
-  background-color: rgb(255, 240, 80);
-}
-.electric {
-  color: #000;
-  background-color: rgb(255, 240, 40);
+.pokemon_more-details_short-data_height,
+.pokemon_more-details_short-data_weight,
+.pokemon_more-details_short-data_base-experience {
+  min-width: 5.75rem;
+  background: #f3f3f3;
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 2px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #333;
 }
 
-.card_fairy {
-  color: #000;
-  background-color: rgb(235, 90, 190);
-}
-.fairy {
-  color: #000;
-  background-color: rgb(233, 50, 190);
+.pokemon_more-details_abilities,
+.pokemon_more-details_stats,
+.pokemon_more-details_held-items {
+  padding: 0.2rem;
 }
 
-.card_fighting {
-  color: #000;
-  background-color: rgb(240, 195, 95);
-}
-.fighting {
-  color: #000;
-  background-color: rgb(240, 170, 20);
+.pokemon_more-details_abilities_title,
+.pokemon_more-details_stats_title,
+.pokemon_more-details_held-items_title {
+  font-size: 0.9rem;
 }
 
-.card_fire {
+.pokemon_more-details_abilities_list {
+  display: flex;
+  justify-content: space-around;
+
   color: #000;
-  background-color: rgb(235, 90, 90);
-}
-.fire {
-  color: #000;
-  background-color: rgb(235, 45, 45);
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
 }
 
-.card_flying {
-  color: #000;
-  background-color: rgb(185, 255, 240);
+.pokemon_more-details_abilities_list_ability,
+.pokemon_more-details_held-items_list_item {
+  text-transform: capitalize;
 }
-.flying {
-  color: #000;
-  background-color: rgb(185, 250, 220);
-}
-
-.card_ghost {
-  color: #fff;
-  background-color: rgb(180, 80, 205);
-}
-.ghost {
-  color: #fff;
-  background-color: rgb(150, 30, 180);
+.pokemon_more-details_abilities_list_ability {
+  min-width: 5rem;
+  text-align: center;
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.3rem;
+  box-shadow: 1px 1px 2px;
+  border: 1px solid #000;
+  background-color: #fff;
 }
 
-.card_grass {
-  color: #000;
-  background-color: rgb(70, 235, 70);
-}
-.grass {
-  color: #000;
-  background-color: rgb(90, 170, 0);
+.pokemon_more-details_abilities_list_ability_hidden {
+  background-color: goldenrod;
 }
 
-.card_ground {
-  color: #000;
-  background-color: rgb(250, 210, 45);
-}
-.ground {
-  color: #000;
-  background-color: rgb(250, 205, 30);
+.pokemon_more-details_stats_title {
 }
 
-.card_ice {
+.pokemon_more-details_stats_list {
+  display: grid;
+  column-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+
   color: #000;
-  background-color: rgb(90, 230, 255);
-}
-.ice {
-  color: #000;
-  background-color: rgb(40, 220, 255);
+  font-size: 0.725rem;
+  padding: 0 0.5rem;
 }
 
-.card_normal {
-  color: #000;
-  background-color: rgb(255, 255, 255);
-}
-.normal {
-  color: #000;
-  background-color: rgb(240, 240, 240);
+.pokemon_more-details_stats_list_stat {
+  display: flex;
+  justify-content: space-between;
 }
 
-.card_poison {
-  color: #fff;
-  background-color: rgb(135, 60, 150);
-}
-.poison {
-  color: #fff;
-  background-color: rgb(130, 20, 150);
+.pokemon_more-details_stats_list_stat_name {
+  text-transform: uppercase;
 }
 
-.card_psychic {
-  color: #000;
-  background-color: rgb(230, 105, 160);
-}
-.psychic {
-  color: #000;
-  background-color: rgb(230, 75, 140);
+.pokemon_more-details_stats_list_stat_base-stat {
 }
 
-.card_rock {
-  color: #fff;
-  background-color: rgb(150, 105, 40);
-}
-.rock {
-  color: #fff;
-  background-color: rgb(145, 90, 15);
+.pokemon_more-details_held-items {
 }
 
-.card_steel {
-  color: #fff;
-  background-color: rgb(220, 220, 220);
-}
-.steel {
-  color: #fff;
-  background-color: rgb(130, 130, 130);
+.pokemon_more-details_held-items_title {
 }
 
-.card_water {
+.pokemon_more-details_held-items_list {
+  display: flex;
+  justify-content: space-around;
+
   color: #000;
-  background-color: rgb(115, 135, 245);
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
 }
-.water {
-  color: #000;
-  background-color: rgb(80, 105, 245);
+
+.pokemon_more-details_held-items_list_item {
+  min-width: 5rem;
+  text-align: center;
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.3rem;
+  box-shadow: 1px 1px 2px;
+  border: 1px solid #000;
+  background-color: #fff;
 }
 
 /* MEDIA QUERIES */
