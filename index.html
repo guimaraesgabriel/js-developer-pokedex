@@ -21,6 +21,14 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/pokedex.css" />
     <link rel="stylesheet" href="./assets/css/poke-types.css" />
@@ -28,9 +36,17 @@
 
   <body>
     <section class="content">
-      <h1>Pokedex</h1>
+      <h1 id="title-pokedex">Pokedex</h1>
 
       <ol id="listPokemons" class="listPokemons"></ol>
+
+      <button
+        type="button"
+        class="btn-to-top"
+        onclick="scrollById('title-pokedex')"
+      >
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </button>
 
       <div class="pagination">
         <button

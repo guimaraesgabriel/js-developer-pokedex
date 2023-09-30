@@ -206,3 +206,9 @@ loadMorePokemons = () => {
     .catch((error) => console.error(error))
     .finally(() => (isLoading = false));
 };
+
+scrollById = (id) => {
+  const elem = document.getElementById(id);
+
+  window.scrollTo(elem.offsetLeft, elem.offsetTop);
+};
