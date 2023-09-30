@@ -6,7 +6,17 @@ isLoading = false;
 let offset = 0;
 let limit = 21;
 
-const maxLimitPokemons = 151;
+const POKEMONS_GEN_1 = 151;
+const POKEMONS_GEN_2 = 251;
+const POKEMONS_GEN_3 = 386;
+const POKEMONS_GEN_4 = 493;
+const POKEMONS_GEN_5 = 649;
+const POKEMONS_GEN_6 = 721;
+const POKEMONS_GEN_7 = 809;
+const POKEMONS_GEN_8 = 905;
+const POKEMONS_GEN_9 = 1015;
+
+const maxLimitPokemons = POKEMONS_GEN_3;
 
 let pokemonIdToggled = null;
 
@@ -17,7 +27,10 @@ function toggleDetails(pokemonNumber) {
     );
 
     if (pokemonNumber === pokemonIdToggled) {
-      return (divPokemonToggledId.style.display = "none");
+      divPokemonToggledId.style.display = "none";
+      pokemonIdToggled = null;
+
+      return;
     }
 
     divPokemonToggledId.style.display = "none";
